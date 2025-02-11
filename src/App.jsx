@@ -3,7 +3,7 @@
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 //Importamos las vistas de la carpeta Pages
 import Panel from './pages/Panel'
-import Login from './pages/Iniciosession'
+import Login from './pages/InicioSession'
 import Registro from './pages/Registro'
 
 import './App.css'

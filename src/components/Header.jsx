@@ -10,15 +10,9 @@ export default function Header(){
         <Link class="navbar-brand" to='/'>Gestión de incidencias FPLLEFIA</Link>
         
         <div>
-          <button className="btn btn-secondary ms-2">
-            <Link className='nav-link' to="/">PANEL</Link>
-            </button>
-          <button className="btn btn-secondary ms-2">
-            <Link className='nav-link' to="/iniciarsesion">LOGIN</Link>
-          </button>
-          <button className="btn btn-secondary ms-2">
-            <Link className='nav-link' to="/registro">REGISTRO</Link>
-          </button>
+            <Link className="btn btn-secondary ms-2" to="/">PANEL</Link>
+            <Link className="btn btn-secondary ms-2" to="/iniciarsesion">LOGIN</Link>
+            <Link className="btn btn-secondary ms-2" to="/registro">REGISTRO</Link>
         </div>
         <div>
           <span>administrador@fpllefia.com</span>
