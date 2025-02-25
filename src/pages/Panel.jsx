@@ -5,6 +5,7 @@ export default function Panel() {
     return (
         <div className="container mt-5">
             <h1>Administración de incidencias</h1>
+            
     <TiquetsPendents />
     <TiquetsResolts />
 
