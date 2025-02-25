@@ -98,16 +98,42 @@ const datos_tickets =[
   const datos_usuario = [
     {
         id: 1,
-        usuario: "Juan",
+        usuario: "Juan Pérez",
         email: "Juan@gmail.com",
         password: "1234"
     },
     {
         id: 2,
-        usuario: "Pedro",
+        usuario: "Pedro Gómez",
         email: "Pedro@gmail.com",
         password: "5678"
+    },
+    {
+        id: 3,
+        usuario: "Ana Martínez",
+        email: "Ana@gmail.com",
+        password: "ana"
+    },
+    {
+        id: 4,
+        usuario: "Sofía Fernández",
+        email: "Sofia@gmail.com",
+        password: "sofia"
+    },
+    {
+        id: 5,
+        usuario: "Luis Torres",
+        email: "Luis@gmail.com",
+        password: "luis"
+    },
+    {
+        id: 6,
+        usuario: "Carolina Ramírez",
+        email: "Carolina@gmail.com",
+        password: "carolina"
     }
+        
+    
 
   ]
 // Guardar en localStorage solo si no existen datos 
@@ -139,3 +165,12 @@ console.log(ticketspendiente);
 // exportar ticketspendientes
 
   export { ticketspendiente };
+
+// Recuperar datos_usuarios del localStorage
+let datosusuarioJSON = JSON.parse(localStorage.getItem('datos_usuario'));
+if(!datosusuarioJSON){
+  datosusuarioJSON = [];
+}
+console.log(datosusuarioJSON);
+
+export { datosusuarioJSON }
