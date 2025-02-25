@@ -10,8 +10,6 @@ import './App.css'
 import Header from './components/Header'
 
 function App() {
-<<<<<<< Updated upstream
-=======
   const datos_tickets =[
     {
       id:1,
@@ -135,9 +133,7 @@ function App() {
   
   
 
-  
-  
->>>>>>> Stashed changes
+
   
   
     return (
