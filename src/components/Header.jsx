@@ -1,7 +1,26 @@
 
 import { Link } from 'react-router-dom';
-
+import { useContext } from 'react';
+import UserContext from './UserContext.jsx';
 export default function Header(){
+  // Usamos el UserContext para obtener el estado del usuario
+  
+
+      const { user, setUser } = useContext(UserContext);
+      const usuario = localStorage.getItem('user', user);
+      console.log(usuario);
+      //creamos una funcion que el usuario elimine el usuario al darle el boton cerrar sesion
+      
+      const cerrarSesion = () => {
+        localStorage.removeItem('user');
+        setUser(null);
+        
+        window.location.href = '/iniciarsesion';
+      }
+
+     
+
+      
 
     return (
         <>
@@ -21,9 +40,12 @@ export default function Header(){
           </button>
         </div>
         <div>
-          <span>administrador@fpllefia.com</span>
+          <span>{ user ? "Usuario: " + user.usuario +"  " +"  Email: " + user.email : 'administrador@fpllefia.com'}</span>
+          
+          {!user ? "" : <button className='btn btn-danger' onClick={cerrarSesion}>Cerrar Sesion</button>}
           
         </div>
+
       </div>
     </nav>
         </>
