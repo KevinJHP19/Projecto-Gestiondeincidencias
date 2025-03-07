@@ -8,23 +8,24 @@ import Registro from './pages/Registro'
 
 import './App.css'
 import Header from './components/Header'
+import UserContext from './components/UserContext'
+
+import { useState } from'react';
 
 function App() {
-  
+  const [user, setUser] = useState(null);
 
     return (
-      
-      <Router>
-        
-    <Header />
-  
-  <Routes>
-      <Route path="/" element={<Panel />} />
-      <Route path="/iniciarsesion" element={<Login />} />
-      <Route path="/registro" element={<Registro />} />
-    </Routes>
-  </Router>
-      
+      <UserContext.Provider value={{ user, setUser }}>
+            <Router>
+                <Header />
+                <Routes>
+                    <Route path="/" element={<Panel />} />
+                    <Route path="/iniciarsesion" element={<Login />} />
+                    <Route path="/registro" element={<Registro />} />
+                </Routes>
+            </Router>
+        </UserContext.Provider>
     )
     
 

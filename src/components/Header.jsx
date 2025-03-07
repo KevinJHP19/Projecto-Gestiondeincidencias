@@ -1,7 +1,13 @@
 
 import { Link } from 'react-router-dom';
-
+import { useContext } from 'react';
+import UserContext from './UserContext.jsx';
 export default function Header(){
+  // Usamos el UserContext para obtener el estado del usuario
+  
+
+      const { user } = useContext(UserContext);
+      console.log('Este es el user context' + user)
 
     return (
         <>
@@ -21,7 +27,8 @@ export default function Header(){
           </button>
         </div>
         <div>
-          <span>administrador@fpllefia.com</span>
+          <span>{ user ? "Usuario: " + user.usuario +"  " +"  Email: " + user.email : 'administrador@fpllefia.com'}</span>
+          
           
         </div>
       </div>
