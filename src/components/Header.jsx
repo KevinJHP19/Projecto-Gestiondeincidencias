@@ -14,6 +14,8 @@ export default function Header(){
       const cerrarSesion = () => {
         localStorage.removeItem('user');
         setUser(null);
+        
+        window.location.href = '/iniciarsesion';
       }
 
      
