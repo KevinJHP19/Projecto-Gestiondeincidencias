@@ -24,6 +24,9 @@ export default function Login() {
         if (usuario) {
             setUser(usuario);
             console.log(user);
+            // Almacenamos el usuario en el localStorage para persistir la sesión
+            localStorage.setItem('user', JSON.stringify(usuario));
+
 
 
             alert('Sesión iniciada correctamente');
