@@ -1,10 +1,15 @@
 
-import { ticketspendiente } from "./Localstorage";
+import { ticketspendiente, datosticketsJSON } from "./Localstorage";
+
+
+
+
+
 
 
 import {  useState } from "react";
 export default function TiquetsPendents(){
-
+    
     console.log('TiquetsPendents cargados');
     const [tickets, setTickets] = useState(ticketspendiente);
 
@@ -37,6 +42,22 @@ export default function TiquetsPendents(){
     function eliminar(id) {
         
         console.log('Id del ticket eliminado:', id);
+        //Filtreu l’array a localStorage i sobreescriviu-lo sense el tiquet seleccionat.
+        const ticketeliminar = ticketspendiente.filter(ticket => ticket.id === id);
+        
+        //ELIMIina el ticket eliminado al array del local storage datos_tickets
+        datosticketsJSON.splice(datosticketsJSON.indexOf(ticketeliminar[0]), 1);
+        
+        //Actualiza el array del local storage datos_tickets
+        
+        localStorage.setItem('datos_tickets', JSON.stringify(datosticketsJSON));
+        //Actualiza el array del useState tickets
+        ticketspendiente.splice(ticketspendiente.indexOf(ticketeliminar[0]), 1);
+        alert('Haz eliminado un ticket del local storage');
+        setTickets([...ticketspendiente]);
+        
+        
+
         
     }
     function resolver(id){

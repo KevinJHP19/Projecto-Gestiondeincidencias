@@ -158,13 +158,15 @@ const ticketspendiente = datosticketsJSON.filter(ticket => ticket.resuelto === f
 const ticketsresueltos = datosticketsJSON.filter(ticket => ticket.resuelto === true);
 
 console.log(ticketsresueltos);
-export { ticketsresueltos };
-
-//muestra el array con los datos filtrados
 console.log(ticketspendiente);
-// exportar ticketspendientes
 
-  export { ticketspendiente };
+export { ticketsresueltos, datosticketsJSON, ticketspendiente };
+
+
+
+
+
+  
 
 // Recuperar datos_usuarios del localStorage
 let datosusuarioJSON = JSON.parse(localStorage.getItem('datos_usuario'));
