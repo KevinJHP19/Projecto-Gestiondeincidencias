@@ -62,15 +62,25 @@ export default function TiquetsPendents(){
     function resolver(id){
 
         console.log('Id del ticket resuelto:', id);
-        //buscamos el ticket con el id en el array de ticketspendiente
-        const ticketresuelto = ticketspendiente.find(ticket => ticket.id === id);
-        //cambiamos el estado del ticket a resuelto
-        ticketresuelto.resuelto = true;
-        //Actualizamos el array del local storage datos_tickets
+        //filtramos el ticket a resolver con el array de ticketspendiente.
+        const ticketresolver = ticketspendiente.filter(ticket => ticket.id === id);
+        //Cambia el estado del ticket a resuelto en el array del local storage datos_tickets
+        ticketresolver[0].resuelto = true;
+        //Actualiza el array del local storage datos_tickets
         localStorage.setItem('datos_tickets', JSON.stringify(datosticketsJSON));
-        //Actualizamos el array del useState tickets
-        setTickets(ticketspendiente.map(ticket => ticket.id === id? {...ticket, resuelto: true} : ticket));
-        alert('Ticket resuelto correctamente');
+        //Actualiza el array del useState tickets
+        ticketspendiente.map(ticket => {
+            if(ticket.id === id){
+                ticket.resuelto = true;
+            }
+            return ticket;
+        });
+        alert('Haz resuelto un ticket del local storage');
+        setTickets([...ticketspendiente]);
+
+
+        
+       
 
     }
     
