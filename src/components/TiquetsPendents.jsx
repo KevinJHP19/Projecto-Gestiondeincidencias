@@ -14,7 +14,7 @@ export default function TiquetsPendents(){
     const [tickets, setTickets] = useState(ticketspendiente);
 
     function agregarticket(){
-        const id = ticketspendiente.length + 1;
+        const id = datosticketsJSON.length + 2;
         const codigo = parseInt(document.querySelector('#codigo').value);
         const fecha = document.querySelector('#fecha').value;
         const aula = document.querySelector('#aula').value;
@@ -26,6 +26,8 @@ export default function TiquetsPendents(){
         
         console.log('ticket agregado');
         ticketspendiente.push({id, codigo, fecha, aula, grupo, ordenador, descripcion, alumno, resuelto: false});
+        datosticketsJSON.push({id: id, codigo: codigo, fecha: fecha, aula: aula, grupo: grupo,ordenador: ordenador, descripcion: descripcion, alumno: alumno, resuelto:false});
+        localStorage.setItem('datos_tickets', JSON.stringify(datosticketsJSON));
 
 
         setTickets([...ticketspendiente]);
@@ -60,6 +62,15 @@ export default function TiquetsPendents(){
     function resolver(id){
 
         console.log('Id del ticket resuelto:', id);
+        //buscamos el ticket con el id en el array de ticketspendiente
+        const ticketresuelto = ticketspendiente.find(ticket => ticket.id === id);
+        //cambiamos el estado del ticket a resuelto
+        ticketresuelto.resuelto = true;
+        //Actualizamos el array del local storage datos_tickets
+        localStorage.setItem('datos_tickets', JSON.stringify(datosticketsJSON));
+        //Actualizamos el array del useState tickets
+        setTickets(ticketspendiente.map(ticket => ticket.id === id? {...ticket, resuelto: true} : ticket));
+        alert('Ticket resuelto correctamente');
 
     }
     
