@@ -41,8 +41,7 @@ export default function TiquetsPendents(){
         document.querySelector('#alumno').value = '';
         
     }
-    function eliminar(id) {
-        
+    function eliminar(id) {    
         console.log('Id del ticket eliminado:', id);
         //filtramos el ticket a eliminar con el array de ticketspendiente.
         const ticketeliminar = ticketspendiente.filter(ticket => ticket.id === id);
@@ -53,11 +52,7 @@ export default function TiquetsPendents(){
         //Actualiza el array del useState tickets
         ticketspendiente.splice(ticketspendiente.indexOf(ticketeliminar[0]), 1);
         alert('Haz eliminado un ticket del local storage');
-        setTickets([...ticketspendiente]);
-        
-        
-
-        
+        setTickets([...ticketspendiente]);   
     }
     function resolver(id){
 
@@ -77,15 +72,7 @@ export default function TiquetsPendents(){
         });
         alert('Haz resuelto un ticket del local storage');
         setTickets([...ticketspendiente]);
-
-
-        
-       
-
-    }
-    
-
-    
+    } 
     return (
         <div>
             <h2>Tickets pendientes</h2>
