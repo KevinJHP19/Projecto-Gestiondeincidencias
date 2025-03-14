@@ -1,9 +1,20 @@
-import { ticketsresueltos } from "./Localstorage";
+import { ticketsresueltos, datosticketsJSON } from "./Localstorage";
 export default function Tiquetsresolts(){
     console.log('TiquetsResueltos cargados');
     function eliminar(id) {
         
         console.log('Id del ticket eliminado:', id);
+        const ticketeliminar = ticketsresueltos.filter(ticket => ticket.id === id);
+        
+        //ELIMIina el ticket eliminado al array del local storage datos_tickets
+        datosticketsJSON.splice(datosticketsJSON.indexOf(ticketeliminar[0]), 1);
+        
+        //Actualiza el array del local storage datos_tickets
+        
+        localStorage.setItem('datos_tickets', JSON.stringify(datosticketsJSON));
+        console.log(datosticketsJSON);
+        //Recarga la página para mostrar los cambios
+        window.location.reload();
         
     }
     return (
