@@ -178,7 +178,29 @@ const datos_tickets =[
         usuario: "Carolina Ramírez",
         fecha: "22/04/2023",
         comentario: "El problema persiste"
+    },
+    {
+      id: 7,
+        ticket_id: 1,
+        usuario: "Carolina Ramírez",
+        fecha: "23/04/2023",
+        comentario: "El problema ha sido resuelto"
+    },
+    {
+      id: 8,
+        ticket_id: 2,
+        usuario: "Carolina Ramírez",
+        fecha: "24/04/2023",
+        comentario: "El problema ha sido resuelto"
+    },
+    {
+      id: 9,
+        ticket_id: 3,
+        usuario: "Carolina Ramírez",
+        fecha: "25/04/2023",
+        comentario: "El problema ha sido resuelto"
     }
+
   ]
 // Guardar en localStorage solo si no existen datos 
 if (!localStorage.getItem('datos_tickets')) {
