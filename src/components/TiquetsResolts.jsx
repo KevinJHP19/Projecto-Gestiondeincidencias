@@ -1,4 +1,7 @@
 import { ticketsresueltos, datosticketsJSON } from "./Localstorage";
+
+import { Link } from "react-router-dom";
+import  Comentaris from "./Comentaris";
 export default function Tiquetsresolts(){
     console.log('TiquetsResueltos cargados');
     function eliminar(id) {
@@ -44,7 +47,8 @@ export default function Tiquetsresolts(){
                             <td>{tiquet.ordenador}</td>
                             <td>{tiquet.descripcion}</td>
                             <td>{tiquet.alumno}</td>
-                            <td><button className="btn btn-info" title="Ver comentarios"><i className="bi bi-chat-left-text"></i>
+                            <td><button className="btn btn-info" title="Ver comentarios"><Link className="nav-link" to={`/comentaris/${tiquet.id}`} element={<Comentaris/>}><i className="bi bi-chat-left-text"></i>
+                            </Link>
                             </button></td>
                             <td><button className="btn btn-danger" title="Eliminar ticket" onClick={() => eliminar(tiquet.id)}><i className="bi bi-trash3"></i>
                             

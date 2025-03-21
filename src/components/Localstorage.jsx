@@ -136,6 +136,72 @@ const datos_tickets =[
     
 
   ]
+  const comentarios =[
+    {
+        id: 1,
+        ticket_id: 4,
+        usuario: "Juan Pérez",
+        fecha: "15/04/2023",
+        comentario: "El problema persiste"
+    },
+    {
+        id: 2,
+        ticket_id: 4,
+        usuario: "Pedro Gómez",
+        fecha: "17/04/2023",
+        comentario: "La solución parece ser cambiar el firmware"
+    },
+    {
+        id: 3,
+        ticket_id: 5,
+        usuario: "Ana Martínez",
+        fecha: "18/04/2023",
+        comentario: "El problema sigue persistiendo"
+    },
+    {
+      id: 4,
+        ticket_id: 6,
+        usuario: "Sofía Fernández",
+        fecha: "20/04/2023",
+        comentario: "El problema persiste"
+    },
+    {
+      id: 5,
+        ticket_id: 7,
+        usuario: "Luis Torres",
+        fecha: "21/04/2023",
+        comentario: "El problema persiste"
+    },
+    {
+      id: 6,
+        ticket_id: 8,
+        usuario: "Carolina Ramírez",
+        fecha: "22/04/2023",
+        comentario: "El problema persiste"
+    },
+    {
+      id: 7,
+        ticket_id: 1,
+        usuario: "Carolina Ramírez",
+        fecha: "23/04/2023",
+        comentario: "El problema ha sido resuelto"
+    },
+    {
+      id: 8,
+        ticket_id: 2,
+        usuario: "Carolina Ramírez",
+        fecha: "24/04/2023",
+        comentario: "El problema ha sido resuelto"
+    },
+    {
+      id: 9,
+        ticket_id: 3,
+        usuario: "Carolina Ramírez",
+        fecha: "25/04/2023",
+        comentario: "El problema ha sido resuelto"
+    }
+
+  ]
 // Guardar en localStorage solo si no existen datos 
 if (!localStorage.getItem('datos_tickets')) {
   localStorage.setItem('datos_tickets', JSON.stringify(datos_tickets));
@@ -143,10 +209,18 @@ if (!localStorage.getItem('datos_tickets')) {
 if (!localStorage.getItem('datos_usuario')) {
   localStorage.setItem('datos_usuario', JSON.stringify(datos_usuario));
 }
-
+if (!localStorage.getItem('datos_comentarios')) {
+  localStorage.setItem('datos_comentarios', JSON.stringify(comentarios));
+}
 // Recuperar datos de localStorage
 let datosticketsJSON = JSON.parse(localStorage.getItem('datos_tickets'));
 
+let datoscomentariosJSON = JSON.parse(localStorage.getItem('datos_comentarios'));
+
+if(!datoscomentariosJSON){
+  datoscomentariosJSON = [];
+}
+export { datoscomentariosJSON };
 //devuelve un array vacio si el valor es null
 if(!datosticketsJSON){
   datosticketsJSON = [];
@@ -161,13 +235,6 @@ console.log(ticketsresueltos);
 console.log(ticketspendiente);
 
 export { ticketsresueltos, datosticketsJSON, ticketspendiente };
-
-
-
-
-
-  
-
 // Recuperar datos_usuarios del localStorage
 let datosusuarioJSON = JSON.parse(localStorage.getItem('datos_usuario'));
 if(!datosusuarioJSON){

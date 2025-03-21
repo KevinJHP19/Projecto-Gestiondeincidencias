@@ -1,13 +1,9 @@
 
 import { ticketspendiente, datosticketsJSON } from "./Localstorage";
-
-
-
-
-
-
+import { Link } from "react-router-dom";
 
 import {  useState } from "react";
+import  Comentaris from "./Comentaris";
 export default function TiquetsPendents(){
     
     console.log('TiquetsPendents cargados');
@@ -105,10 +101,15 @@ export default function TiquetsPendents(){
                             <td>{ticket.descripcion}</td>
                             <td>{ticket.alumno}</td>
                             <td><button className="btn btn-success" onClick={() => resolver(ticket.id)}>{ticket.resuelto? 'Resuelto' : 'Pendiente'}</button></td>
-                            <td><button className="btn btn-warning" title="Añadir comentario"><i className="bi  bi-pencil" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+                            <td><button className="btn btn-warning" title="Añadir comentario">
+                                <Link className="nav-link" to={`/comentari/${ticket.id}`}><i className="bi  bi-pencil" ></i></Link>
                             </button></td>
-                            <td><button className="btn btn-info" title="Ver comentarios"><i className="bi bi-chat-left-text"></i>
-                            </button></td>
+
+                            <td><button className="btn btn-info" title="Ver comentarios"><Link className="nav-link" to={`/comentaris/${ticket.id}`} element={<Comentaris/>}><i className="bi bi-chat-left-text"></i></Link>
+                            </button>
+                            
+                            </td>
+
                             <td><button className="btn btn-danger" title="Eliminar ticket" onClick={() => eliminar(ticket.id)}><i className="bi bi-trash3"></i>
                             </button></td>
                         </tr>
