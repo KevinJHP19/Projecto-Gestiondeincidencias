@@ -72,9 +72,9 @@ export default function TiquetsPendents(){
     return (
         <div>
             <h2>Tickets pendientes</h2>
-            <button type="button" className="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Crear ticket
-            </button>
+            <button className="btn btn-primary ms-2">
+            <Link className='nav-link' to="/tiquet">Crear ticket</Link>
+          </button>
             <table className="table mt-4">
                 <thead>
                     <tr>
@@ -125,23 +125,7 @@ export default function TiquetsPendents(){
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                         <div className="modal-body">
-                            <form action="">
-                                <h4>Crear ticket</h4>
-                                <label htmlFor="" className="form-label">Introduce el código</label>
-                                <input type="text" className="form-control" id="codigo" aria-describedby="" required/>  
-                                <label htmlFor="" className="form-label">Introduce la fecha</label>
-                                <input type="text" className="form-control" id="fecha" aria-describedby="" placeholder="dd/mm/aaaa" required/>
-                                <label htmlFor="" className="form-label">Introduce el aula</label>
-                                <input type="text" className="form-control" id="aula" aria-describedby="" required/>
-                                <label htmlFor="" className="form-label">Introduce el grupo</label>
-                                <input type="text" className="form-control" id="grupo" aria-describedby="" required />
-                                <label htmlFor="" className="form-label">Introduce el ordenador</label>
-                                <input type="text" className="form-control" id="ordenador" aria-describedby="" required/>
-                                <label htmlFor="" className="form-label">Introduce la descripción</label>
-                                <textarea className="form-control" id="descripcion" rows="3" required></textarea>
-                                <label htmlFor="" className="form-label">Introduce el alumno</label>
-                                <input type="text" className="form-control" id="alumno" aria-describedby="" required/>
-                            </form>
+                            
                         </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
