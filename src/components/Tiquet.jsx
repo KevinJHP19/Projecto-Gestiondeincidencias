@@ -1,4 +1,9 @@
-import { useState } from "react";
+import { useState,  } from "react";
+import { datosticketsJSON } from "./Localstorage";
+import { useNavigate } from "react-router-dom";
+
+
+
 
 export default function Tiquet() {
     // Estado para gestionar los valores del formulario
@@ -11,8 +16,9 @@ export default function Tiquet() {
         descripcion: "",
         alumno: ""
     });
-
-    // Manejar cambios en los inputs
+    const navigate = useNavigate();
+    
+    //Maneja cambios en los inputs
     const handleChange = (e) => {
         const { id, value } = e.target;
         setFormdatos({
@@ -20,11 +26,38 @@ export default function Tiquet() {
             [id]: value
         });
     };
-
-    // Manejar el envío del formulario
+    
+    //Maneja el envío del formulario
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Datos del formulario:", formdatos);
+
+        const nuevoTicket = {
+            id:datosticketsJSON.length + 1,
+            ...formdatos,resuelto: false
+        };
+
+        //Añadimos un nuevo ticket al array de los tickets
+
+        datosticketsJSON.push(nuevoTicket);
+
+        //Guardamos el array actualizado en el localStorage
+        localStorage.setItem("datos_tickets", JSON.stringify(datosticketsJSON,false));
+        alert("Ticket creado correctamente");
+        // Limpiamos el formulario
+        setFormdatos({
+            codigo: "",
+            fecha: "",
+            aula: "",
+            grupo: "",
+            ordenador: "",
+            descripcion: "",
+            alumno: ""
+        });
+        navigate("/");
+        window.location.reload();
+        
+
         
     }
     
@@ -99,7 +132,9 @@ export default function Tiquet() {
                     onChange={handleChange}
                     required
                 />
-                <button type="submit" className="btn btn-primary mt-3">Crear Ticket</button>
+                <button type="submit" className="btn btn-primary mt-3">
+                    Crear ticket
+                </button>
             </form>
         </div>
     );
