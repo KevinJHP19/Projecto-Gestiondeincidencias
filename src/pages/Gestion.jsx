@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { datosusuarioJSON } from "../components/Localstorage";
 
 export default function Gestion() {
@@ -7,6 +7,19 @@ export default function Gestion() {
         const datosGuardados = localStorage.getItem("datos_usuario");
         return datosGuardados ? JSON.parse(datosGuardados) : datosusuarioJSON;
     });
+    // Función para actualizar el rol de un usuario
+    const actualizarRol = (id, nuevoRol) => {
+        const usuariosActualizados = usuarios.map((usuario) =>
+            usuario.id === id ? { ...usuario, rol: nuevoRol } : usuario
+        );
+        setUsuarios(usuariosActualizados);
+
+        // Actualizar el localStorage
+        localStorage.setItem("datos_usuario", JSON.stringify(usuariosActualizados));
+        alert(`El rol  se ha actualizado a ${nuevoRol}`);
+    };
+    
+    
 
     
 
@@ -40,6 +53,7 @@ export default function Gestion() {
                                     <option value="" disabled>Selecciona un rol</option>
                                     <option value="admin">Administrador</option>
                                     <option value="usuario">Usuario</option>
+                                    <option value="profesor">Profesor</option>
                                     
                                 </select>
                             </td>
