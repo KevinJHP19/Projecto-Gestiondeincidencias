@@ -15,7 +15,7 @@ export default function Header(){
         localStorage.removeItem('user');
         setUser(null);
         
-        window.location.href = '/iniciarsesion';
+        
       }
 
      
