@@ -6,6 +6,7 @@ import Login from './pages/InicioSession'
 import Registro from './pages/Registro'
 import Comentaris from './components/Comentaris' 
 import Comentari from './components/Comentari'
+import Gestion from './pages/Gestion'
 
 import Tiquet from './components/Tiquet'
 
@@ -30,6 +31,7 @@ function App() {
                     <Route path="/iniciarsesion" element={<Login />} />
                     <Route path="/registro" element={<Registro />} />
                     <Route path="/tiquet" element={<Tiquet />} />
+                    <Route path="/gestion" element={<Gestion />} />
                     {/* Aquí añadimos más rutas */}
                     <Route path={`/comentaris/:id`} element={<Comentaris />} />
                     <Route path={`/comentari/:id`} element={<Comentari />} />
