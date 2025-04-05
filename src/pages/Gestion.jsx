@@ -2,6 +2,9 @@ import { useState } from "react";
 import { datosusuarioJSON } from "../components/Localstorage";
 
 export default function Gestion() {
+    if(localStorage.getItem("user") == null){
+        window.location.href = "/iniciarsesion";
+    }
     const [usuarios, setUsuarios] = useState(() => {
         // Cargar datos desde localStorage o usar datos iniciales
         const datosGuardados = localStorage.getItem("datos_usuario");

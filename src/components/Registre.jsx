@@ -8,17 +8,16 @@ export default function Registre(){
         const email = document.querySelector('#correo').value;
         const password = document.querySelector('#password').
         value;
-        const usuario = null;
-
+        const usuario = email.split('@')[0];
         datos_Usuario.forEach((usuario) => {
             if (usuario.email === email) {
                 alert('El usuario ya existe');
                 return;
             }
         });
-
+        const rol = 'usuario';
         if (!datos_Usuario.find(usuario => usuario.email === email)) {
-            datos_Usuario.push({ id,usuario, email, password });
+            datos_Usuario.push({ id,usuario, email, password,rol });
             console.log(datos_Usuario);
             localStorage.setItem('datos_usuario', JSON.stringify(datos_Usuario));
             alert('Usuario registrado con éxito');

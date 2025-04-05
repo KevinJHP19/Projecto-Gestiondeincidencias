@@ -100,37 +100,43 @@ const datos_tickets =[
         id: 1,
         usuario: "Juan Pérez",
         email: "Juan@gmail.com",
-        password: "1234"
+        password: "1234",
+        rol:"Administrador"
     },
     {
         id: 2,
         usuario: "Pedro Gómez",
         email: "Pedro@gmail.com",
-        password: "5678"
+        password: "5678",
+        rol:"Usuario"
     },
     {
         id: 3,
         usuario: "Ana Martínez",
         email: "Ana@gmail.com",
-        password: "ana"
+        password: "ana",
+        rol:"Usuario"
     },
     {
         id: 4,
         usuario: "Sofía Fernández",
         email: "Sofia@gmail.com",
-        password: "sofia"
+        password: "sofia",
+        rol:"Usuario"
     },
     {
         id: 5,
         usuario: "Luis Torres",
         email: "Luis@gmail.com",
-        password: "luis"
+        password: "luis",
+        rol:"Usuario"
     },
     {
         id: 6,
         usuario: "Carolina Ramírez",
         email: "Carolina@gmail.com",
-        password: "carolina"
+        password: "carolina",
+        rol:"Profesor"
     }
         
     
@@ -163,42 +169,48 @@ const datos_tickets =[
         ticket_id: 6,
         usuario: "Sofía Fernández",
         fecha: "20/04/2023",
-        comentario: "El problema persiste"
+        comentario: "El problema persiste",
+        rol:"usuario"
     },
     {
       id: 5,
         ticket_id: 7,
         usuario: "Luis Torres",
         fecha: "21/04/2023",
-        comentario: "El problema persiste"
+        comentario: "El problema persiste",
+        rol:"usuario"
     },
     {
       id: 6,
         ticket_id: 8,
         usuario: "Carolina Ramírez",
         fecha: "22/04/2023",
-        comentario: "El problema persiste"
+        comentario: "El problema persiste",
+        rol:"usuario"
     },
     {
       id: 7,
         ticket_id: 1,
         usuario: "Carolina Ramírez",
         fecha: "23/04/2023",
-        comentario: "El problema ha sido resuelto"
+        comentario: "El problema ha sido resuelto",
+        rol:"usuario"
     },
     {
       id: 8,
         ticket_id: 2,
         usuario: "Carolina Ramírez",
         fecha: "24/04/2023",
-        comentario: "El problema ha sido resuelto"
+        comentario: "El problema ha sido resuelto",
+        rol:"usuario"
     },
     {
       id: 9,
         ticket_id: 3,
         usuario: "Carolina Ramírez",
         fecha: "25/04/2023",
-        comentario: "El problema ha sido resuelto"
+        comentario: "El problema ha sido resuelto",
+        rol:"usuario"
     }
 
   ]
