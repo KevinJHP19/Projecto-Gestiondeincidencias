@@ -31,10 +31,6 @@ export default function Login() {
 
             alert('Sesión iniciada correctamente');
 
-
-            
-            
-            
         } else {
             alert('Usuario o contraseña incorrectos');
             // Mostrar un mensaje de error en los inputs
